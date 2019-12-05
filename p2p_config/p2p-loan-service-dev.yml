@@ -5,6 +5,11 @@ eureka:
     service-url:
       defaultZone: http://localhost:10086/eureka
 spring:
+  jackson:
+    date-format: yyyy-MM-dd
+  redis:
+      host: 192.168.40.128
+      port: 6379
   datasource:
     url: jdbc:mysql://localhost:3306/1703a_p2p?characterEncoding=utf-8
     username: root
