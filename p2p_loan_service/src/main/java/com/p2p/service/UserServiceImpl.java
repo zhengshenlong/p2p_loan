@@ -2,8 +2,9 @@ package com.p2p.service;
 
 
 import com.p2p.bean.User;
-import com.p2p.utils.CookieUtil;
-import com.p2p.utils.Md5Util;
+import com.p2p.bean.utils.CookieUtil;
+import com.p2p.bean.utils.Md5Util;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -5,5 +5,5 @@ spring:
     config:
       server:
         git:
-          uri:
-          search-paths:
+          uri: https://github.com/zhengshenlong/p2p_loan
+          search-paths: p2p_config
