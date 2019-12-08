@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-      @RequestMapping("login")
+      @PostMapping("login")
       @ResponseBody
     public boolean login(@RequestBody User user
       , HttpServletRequest request, HttpServletResponse response){
