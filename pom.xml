@@ -13,6 +13,10 @@
         <module>p2p_eureka_server</module>
         <module>p2p_api_server</module>
         <module>p2p_loan_service</module>
+        <module>p2p_user_service</module>
+        <module>p2p_account_service</module>
+        <module>p2p_bid_service</module>
+        <module>p2p_plan_service</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -4,8 +4,8 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: p2p-loan-service
-        uri: lb://p2p-loan-service
+      - id: p2p-user-service
+        uri: lb://p2p-user-service
         predicates:
         - Path=/
         filters:

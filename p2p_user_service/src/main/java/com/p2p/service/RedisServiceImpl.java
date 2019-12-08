@@ -19,7 +19,6 @@ public class RedisServiceImpl {
           String json=objToJson(obj);
           redisTemplate.opsForValue().set(key,json,seconds, TimeUnit.SECONDS);
       }
-
     private <T> String objToJson(T obj){
         Class<?> clazz = obj.getClass();
 

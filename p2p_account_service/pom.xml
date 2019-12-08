@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>p2p_loan_service</artifactId>
+    <artifactId>p2p_account_service</artifactId>
 
 
     <dependencies>

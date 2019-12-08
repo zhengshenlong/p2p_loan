@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="p2p_account_service" />
         <module name="p2p_api_server" />
+        <module name="p2p_bid_service" />
         <module name="p2p_config_server" />
         <module name="p2p_eureka_server" />
         <module name="p2p_gateway_server" />
         <module name="p2p_loan_service" />
+        <module name="p2p_plan_service" />
+        <module name="p2p_user_service" />
       </profile>
     </annotationProcessing>
   </component>

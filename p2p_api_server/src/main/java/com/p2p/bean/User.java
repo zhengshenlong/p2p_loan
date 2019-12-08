@@ -1,30 +1,26 @@
 package com.p2p.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-
-@Entity
-@Table(name = "t_user")
 public class User implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer  id;
-    private String userUsername;
-    private String userPassword;
-    private String userPhone;
-    private String userMicroblog;
-    private String userPresenter;
-    private String userVip;
-    private String userStatus;
-    private String userEmail;
+    private Integer  id;//主键
+    private String userUsername;//用户名
+    private String userPassword;//用户密码
+    private String userPhone;//用户手机号
+    private String userMicroblog;//微博
+    private String userPresenter;//推荐人/备注/会员名
+    private String userVip;//会员种类(普通会员:0/企业会员:1)
+    private String userStatus;//用户状态(可登录:0/不可登录:1)
+    private String userEmail;//用户邮箱
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date userRegTime;
-    private String userAddress;
+    private Date userRegTime;//注册时间
+    private String userAddress;//用户地址
 
 
     @Override

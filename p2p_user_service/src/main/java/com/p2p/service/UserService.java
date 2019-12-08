@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface UserService {
 
-     public User dologin(User user, HttpServletRequest request, HttpServletResponse response);
 
-
+     public boolean dologin(String userUsername, String userPassword, HttpServletRequest request, HttpServletResponse response);
 }
