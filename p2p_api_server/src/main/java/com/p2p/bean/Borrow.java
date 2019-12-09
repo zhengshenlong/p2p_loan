@@ -2,11 +2,16 @@ package com.p2p.bean;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+@Table(name = "t_borrow_audit_record")
+@Entity
 public class Borrow implements Serializable {
 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;//审核id
     private Integer borrowId;//借款标id
     private String auditType;//审核类型（0:发标前审核    1：满标审核）

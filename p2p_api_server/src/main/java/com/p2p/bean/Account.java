@@ -1,10 +1,16 @@
 package com.p2p.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "t_account")
 public class Account implements Serializable {
 
+    @Id
     private Integer id;//主键,同用户表
     private BigDecimal accoubtAvbalance;//账户可用余额
     private BigDecimal accoubtFrobalance;//账户冻结资金
@@ -14,6 +20,18 @@ public class Account implements Serializable {
     private BigDecimal creditLimit;//授信额度
     private BigDecimal remainCreditLimit;//剩余授信额度
     private String tradePassword;//交易密码
+
+    public Account(Integer id, BigDecimal accoubtAvbalance, BigDecimal accoubtFrobalance, BigDecimal unreceivePrincipal, BigDecimal unreceiveInterest, BigDecimal unreceiveMoney, BigDecimal creditLimit, BigDecimal remainCreditLimit, String tradePassword) {
+        this.id = id;
+        this.accoubtAvbalance = accoubtAvbalance;
+        this.accoubtFrobalance = accoubtFrobalance;
+        this.unreceivePrincipal = unreceivePrincipal;
+        this.unreceiveInterest = unreceiveInterest;
+        this.unreceiveMoney = unreceiveMoney;
+        this.creditLimit = creditLimit;
+        this.remainCreditLimit = remainCreditLimit;
+        this.tradePassword = tradePassword;
+    }
 
     public void setId(Integer id) {
         this.id = id;

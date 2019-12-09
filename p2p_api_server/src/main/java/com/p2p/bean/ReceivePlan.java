@@ -1,11 +1,16 @@
 package com.p2p.bean;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
+@Table(name = "t_receive_plan")
 public class ReceivePlan implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;//收款计划id
     private Integer returnId;//所属还款计划id
     private Integer borrowId;//借款标id

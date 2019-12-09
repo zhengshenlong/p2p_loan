@@ -2,13 +2,17 @@ package com.p2p.bean;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
+@Table(name = "t_return_plan")
 public class ReturnPlan implements Serializable {
 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
        private Integer  id;//编号
        private Integer borrowId;//借款标id
        private String loanName;//贷款名称

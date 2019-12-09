@@ -15,10 +15,9 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-  mybatis:
-    mapper-locations: classpath:mapper/*.xml
-    type-aliases-package: com.p2p.bean
-    configuration:
-      map-underscore-to-camel-case: true  #字段实体属性映射驼峰转换s
+  jpa:
+    show-sql: true  #显示sql语句
+    hibernate:
+      ddl-auto: update  #如果没有表,就创建 ;如存在,则更新
     properties:
       hibernate.format_sql: true  #格式化sql

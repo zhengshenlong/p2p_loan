@@ -1,11 +1,16 @@
 package com.p2p.bean;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Table(name = "t_recharge_record")
+@Entity
 public class Recharge implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Integer payId; //主键(支付单号)
      private BigDecimal payMoney; //支付金额
      private Date downOrderTime;//下单时间

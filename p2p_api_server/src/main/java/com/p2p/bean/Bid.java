@@ -2,12 +2,17 @@ package com.p2p.bean;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
+@Table(name = "t_bid_record")
 public class Bid implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
      private  Integer bidId;//投标记录主键
     private  Integer borrowId;//借款标id
     private  String  borrowName;//借款标名称

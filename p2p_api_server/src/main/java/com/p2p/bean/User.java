@@ -7,8 +7,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity
+@Table(name = "t_user")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer  id;//主键
     private String userUsername;//用户名
     private String userPassword;//用户密码
@@ -22,6 +26,8 @@ public class User implements Serializable {
     private Date userRegTime;//注册时间
     private String userAddress;//用户地址
 
+    public User() {
+    }
 
     @Override
     public String toString() {
@@ -40,18 +46,6 @@ public class User implements Serializable {
                 '}';
     }
 
-    public User(String userUsername, String userPassword, String userPhone, String userMicroblog, String userPresenter, String userVip, String userStatus, String userEmail, Date userRegTime, String userAddress) {
-        this.userUsername = userUsername;
-        this.userPassword = userPassword;
-        this.userPhone = userPhone;
-        this.userMicroblog = userMicroblog;
-        this.userPresenter = userPresenter;
-        this.userVip = userVip;
-        this.userStatus = userStatus;
-        this.userEmail = userEmail;
-        this.userRegTime = userRegTime;
-        this.userAddress = userAddress;
-    }
 
     public void setId(Integer id) {
         this.id = id;

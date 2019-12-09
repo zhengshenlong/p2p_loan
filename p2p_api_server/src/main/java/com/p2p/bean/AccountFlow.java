@@ -1,9 +1,14 @@
 package com.p2p.bean;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "t_account_flow")
 public class AccountFlow implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer recorId;//主键id
     private BigDecimal recordDate;//动账时间
     private String recordHandletype;//操作类型

@@ -19,8 +19,5 @@ public class Md5Util {
 
         }
 
-    public static void main(String[] args) {
-        String pwd="123456";
-        System.out.println(Md5Util.md5(pwd));
-    }
+
 }
