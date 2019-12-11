@@ -11,7 +11,9 @@ zuul:
   prefix: /api # 添加路由前缀
   ignored-services: '*'   # 使用'*'可忽略所有微服务
   routes:
-    p2p-user-service: /p2p_user_service/**
+    user-service:
+      serviceId: user-service
+      path: /user_service/**
   sensitive-headers:
 filter:
   whiteList:
