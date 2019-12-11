@@ -6,12 +6,6 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    show-sql: true  #显示sql语句
-    hibernate:
-      ddl-auto: update  #如果没有表,就创建 ;如存在,则更新
-    properties:
-      hibernate.format_sql: true  #格式化sql
   redis:
     host: 192.168.40.128
     port: 6379
@@ -19,11 +13,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:10088/eureka
+  instance:
+    prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
+    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
 zuul:
   prefix: /api # 添加路由前缀
   ignored-services: '*'   # 使用'*'可忽略所有微服务
   routes:
-     p2p-user-service: /p2p_user_service/**
+    p2p-user-service: /p2p_user_service/**
+  sensitive-headers:
 filter:
   whiteList:
   - /user/login
