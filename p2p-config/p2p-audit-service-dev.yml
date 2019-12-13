@@ -1,0 +1,23 @@
+server:
+  port: 8087
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10088/eureka
+spring:
+  jackson:
+    date-format: yyyy-MM-dd
+  redis:
+      host: 192.168.40.128
+      port: 6379
+  datasource:
+    url: jdbc:mysql://localhost:3306/1703a_p2p?characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true  #显示sql语句
+    hibernate:
+      ddl-auto: update  #如果没有表,就创建 ;如存在,则更新
+    properties:
+      hibernate.format_sql: true  #格式化sql
