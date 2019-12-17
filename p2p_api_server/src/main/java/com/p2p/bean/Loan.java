@@ -15,14 +15,14 @@ public class Loan implements Serializable {
     private String borrowName;//借款标名称
     private Integer borrowUserId;//贷款人id
     private BigDecimal borrowMoney;//贷款金额
-    private String yearRate;//年化利率
-    private String returnMonthes;//还款期数
+    private BigDecimal yearRate;//年化利率
+    private Integer returnMonthes;//还款期数
     private String borrowUse;//借款用途
-    private String paymentMethod;//还款方式(等额本息,等额本金,按月到期)
+    private Integer paymentMethod;//还款方式(等额本息,等额本金,按月到期)
     private String borrowDays;//招标天数
     private BigDecimal accessMoney;//募集到的资金金额
     private Date publishTime;//发布时间
-    private String status;//借款标状态
+    private Integer status;//借款标状态
 
     public void setBorrowSignId(Integer borrowSignId) {
         this.borrowSignId = borrowSignId;
@@ -40,11 +40,11 @@ public class Loan implements Serializable {
         this.borrowMoney = borrowMoney;
     }
 
-    public void setYearRate(String yearRate) {
+    public void setYearRate(BigDecimal yearRate) {
         this.yearRate = yearRate;
     }
 
-    public void setReturnMonthes(String returnMonthes) {
+    public void setReturnMonthes(Integer returnMonthes) {
         this.returnMonthes = returnMonthes;
     }
 
@@ -52,7 +52,7 @@ public class Loan implements Serializable {
         this.borrowUse = borrowUse;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
+    public void setPaymentMethod(Integer paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 
@@ -68,7 +68,7 @@ public class Loan implements Serializable {
         this.publishTime = publishTime;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -88,11 +88,11 @@ public class Loan implements Serializable {
         return borrowMoney;
     }
 
-    public String getYearRate() {
+    public BigDecimal getYearRate() {
         return yearRate;
     }
 
-    public String getReturnMonthes() {
+    public Integer getReturnMonthes() {
         return returnMonthes;
     }
 
@@ -100,7 +100,7 @@ public class Loan implements Serializable {
         return borrowUse;
     }
 
-    public String getPaymentMethod() {
+    public Integer getPaymentMethod() {
         return paymentMethod;
     }
 
@@ -116,7 +116,7 @@ public class Loan implements Serializable {
         return publishTime;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 }

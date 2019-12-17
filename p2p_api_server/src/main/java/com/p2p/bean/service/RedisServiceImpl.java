@@ -1,7 +1,8 @@
-package com.p2p.service;
+package com.p2p.bean.service;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,6 @@ public class RedisServiceImpl {
 
     @Autowired
     private StringRedisTemplate redisTemplate;
-
     //将数据存入redis中  泛型方法      泛型类  泛型接口
     public <T> void set(String key , T obj , int seconds){
         String json = objToJson(obj);
@@ -49,5 +49,6 @@ public class RedisServiceImpl {
         }
         return JSON.parseObject(json,clazz);
     }
+
 
 }

@@ -2,9 +2,9 @@ package com.p2p.controller;
 
 import com.p2p.bean.User;
 import com.p2p.bean.Vo.UserVo;
+import com.p2p.bean.service.RedisServiceImpl;
 import com.p2p.bean.utils.CookieUtil;
 import com.p2p.bean.utils.Md5Util;
-import com.p2p.service.RedisServiceImpl;
 import com.p2p.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -25,10 +27,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+
     @GetMapping("login")
-    public boolean login(@RequestParam(name = "username")String userUsername , @RequestParam(name = "password")String userPassword,
+    public Object login(@RequestParam(name = "username")String userUsername , @RequestParam(name = "password")String userPassword,
                          HttpServletRequest request, HttpServletResponse response){
+        Map<Object, Object> map = new HashMap<>();
         User user = userService.findByUserUsername(userUsername);
+         map.put("user",user);
         //判断用户名是否正确
         if(user == null){
             //用户名错误
@@ -59,7 +65,7 @@ public class UserController {
                 }
             }
         }
-        return true;
+        return map;
     }
 
       @PostMapping("save")

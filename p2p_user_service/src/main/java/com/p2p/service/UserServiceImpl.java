@@ -6,6 +6,7 @@ import com.p2p.bean.User;
 import com.p2p.bean.utils.CookieUtil;
 import com.p2p.bean.utils.Md5Util;
 import com.p2p.dao.UserDao;
+import com.p2p.feign.AccountFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,9 @@ public class UserServiceImpl implements  UserService{
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private AccountFeign accountFeign;
+
     @Override
     public User findByUserUsername(String userUsername) {
         User user = userDao.findByUserUsername(userUsername);
@@ -41,6 +45,9 @@ public class UserServiceImpl implements  UserService{
             * */
             Account account = new Account(user.getId(),new BigDecimal(0),new BigDecimal(0),new BigDecimal(0)
                     ,new BigDecimal(0),new BigDecimal(0),new BigDecimal(0),new BigDecimal(0),"123456");
+
+            //通过feign调用添加账户信息
+            accountFeign.addAccount(account);
            //同时吧数据初始值为0
             return true;
         }catch (Exception e){

@@ -8,13 +8,16 @@ eureka:
     prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
     ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
 zuul:
-  prefix: /api # 添加路由前缀
-  ignored-services: '*'   # 使用'*'可忽略所有微服务
-  routes:
-    user-service:
-      serviceId: user-service
-      path: /user_service/**
   sensitive-headers:
-filter:
-  whiteList:
-  - /user/login
+  ignored-services: '*'
+  routes:
+    p2p-user-service: /p2p_user/**
+    p2p-account-service: /p2p_account/**
+    p2p-bid-service: /p2p_bid/**
+    p2p-loan-service: /p2p_loan/**
+  host:
+    connect-timeout-millis: 15000 #HTTP连接超时要比Hystrix的大
+    socket-timeout-millis: 60000   #socket超时
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

@@ -9,18 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>p2p_gateway_server</artifactId>
+    <artifactId>p2p_zull_server</artifactId>
+
     <dependencies>
 
         <!-- Eureka客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>2.0.1.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
             <version>2.0.1.RELEASE</version>
         </dependency>
         <dependency>
@@ -35,11 +31,22 @@
 
 
         <dependency>
+            <groupId>com.zhengshenlong</groupId>
+            <artifactId>p2p_api_server</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
             <version>2.0.1.RELEASE</version>
         </dependency>
 
     </dependencies>
-
 </project>

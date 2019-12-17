@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>p2p_config_server</module>
-        <module>p2p_gateway_server</module>
         <module>p2p_eureka_server</module>
         <module>p2p_api_server</module>
         <module>p2p_loan_service</module>
@@ -17,6 +16,9 @@
         <module>p2p_account_service</module>
         <module>p2p_bid_service</module>
         <module>p2p_plan_service</module>
+        <module>p2p_zull_server</module>
+        <module>p2p_audit_service</module>
+        <module>p2p_recharge_srevice</module>
     </modules>
     <packaging>pom</packaging>
 
